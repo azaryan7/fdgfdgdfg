@@ -26,6 +26,7 @@ from urllib.parse import parse_qs, urlparse
 import googleapiclient.discovery
 
 auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
+bot = Client(
     "stbotdl",
     bot_token=os.environ.get("BOT_TOKEN"),
     api_id=int(os.environ.get("API_ID")),
