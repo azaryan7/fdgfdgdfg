@@ -26,16 +26,19 @@ from urllib.parse import parse_qs, urlparse
 import googleapiclient.discovery
 
 auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
+api_id=7520233
 bot = Client(
     "stbotdl",
     bot_token=os.environ.get("BOT_TOKEN"),
-    api_id=int(os.environ.get("API_ID")),
-    api_hash=os.environ.get("API_HASH")
+    api_id=int(str(api_id)), #int(os.environ.get("API_ID")),
+    api_hash="8151cd1a69086a1d9b8760acd05fe27d", #os.environ.get("API_HASH")
 )
 
 logger = logging.getLogger()
 r = requests.Session()
 api_url = "https://clspls.vercel.app"
+
+
 
 
    
@@ -94,7 +97,7 @@ async def formatSL(format_id, resolution):
      except Exception as e:
         print(e)
         ytf, res = "best", "best"
-        return ytf, rets
+        return ytf, res
      
 async def drmdl(bot, m, url, caption, name, ytf, res):
    try:
@@ -275,7 +278,7 @@ async def stiq(bot: Client, m: Message):
 async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)      
-       
+
          
                     
                     
@@ -301,3 +304,4 @@ async def linkk(bot: Client, m: Message):
        
                   
 bot.run()                      
+

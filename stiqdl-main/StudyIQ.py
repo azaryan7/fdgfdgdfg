@@ -1,4 +1,6 @@
 import requests, json, concurrent.futures
+crux_url="https://www.studyiq.net/api/v4/my_course_video_crux"
+ppt_url="https://www.studyiq.net/api/v4/my_course_video_ppt"
 url = "https://www.studyiq.net/api/v4/course_detail"
 headers={"Content-Type": "application/x-www-form-urlencoded",
     "Content-Length": "108",

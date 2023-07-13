@@ -1,12 +1,14 @@
 import yt_dlp
 
 ytdl_opts = {
+    'external_downloader': 'aria2c',
+    'allow_unplayable_formats': True,
     'listformats': True,
     'nocheckcertificate': True
 }
 
 ydl = yt_dlp.YoutubeDL(ytdl_opts)          
-def get_resolution(url):
+async def get_resolution(url):
      formats = ydl.extract_info(url, download=False)["formats"]
      format_id = []
      for format in formats:  
