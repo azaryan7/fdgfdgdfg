@@ -232,7 +232,7 @@ async def drm(bot: Client, m: Message):
                     url = f"{api_url}/classplus/url={url}"
           elif "cpvod" in url:
                    url = f"{api_url}/cpvod/url={url}"
-          elif "studyiq.com" in url:
+          elif "//studyiq.com" in url:
                   url = f"{api_url}/curl/{url.split('/')[-1]}"
          
           if url.startswith("http"):
