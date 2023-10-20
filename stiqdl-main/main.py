@@ -66,13 +66,13 @@ async def linkdl(bot, m, url, caption, name, ytf, res):
        thumbnail = f"{path}.jpg"
        dur = int(helper.duration(path))
        await editable1.edit("**Uploading on Telegram**")
-       await bot.send_video(chat_id = chat_id, video=path, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=720,width=1280)
+       await bot.send_video(chat_id = chat_id, video=path, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=1080,width=1920)
        await editable1.delete(True)
        os.remove(path)
        os.remove(thumbnail)
     except Exception as e:
       try:
-       await bot.send_video(chat_id=chat_id, video = path, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=720,width=1280)
+       await bot.send_video(chat_id=chat_id, video = path, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=1080,width=1920)
        await editable1.delete(True)
        os.remove(path)
       except:
@@ -142,7 +142,7 @@ async def drmdl(bot, m, url, caption, name, ytf, res):
     await editable1.edit("**Uploading on Telegram**")
     
       
-    await m.reply_video(filename, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=720,width=1280)
+    await m.reply_video(filename, caption=caption, thumb=thumbnail, duration=dur, supports_streaming=True, height=1080,width=1920)
     time.sleep(2)
     await editable1.delete(True)
     os.remove(f"video.mp4")
